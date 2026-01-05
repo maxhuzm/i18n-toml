@@ -1,0 +1,15 @@
+[info]
+welcome = "Welcome, {username}!"
+version = "Application version: {version}"
+
+[errors]
+file_not_found = "File {filename} not found"
+invalid_input = "Invalid input"
+network_error = "Network error"
+server_error = "Server error"
+
+[auth]
+login_success = "Login successful"
+logout_success = "Logout successful"
+invalid_credentials = "Invalid credentials"
+permission_denied = "Permission denied"
