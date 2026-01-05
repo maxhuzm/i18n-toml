@@ -1,6 +1,7 @@
 [info]
 welcome = "Добро пожаловать, {username}!"
-version = "Версия приложения: {version}"
+version.stable = "Стабильная версия приложения: {version}"
+version.alpha = "Альфа-версия приложения: {version}"
 
 help = """
 Справка по командам CLI:

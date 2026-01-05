@@ -1,6 +1,7 @@
 [info]
 welcome = "Welcome, {username}!"
-version = "Application version: {version}"
+version.stable = "Stable application version: {version}"
+version.alpha = "Alpha application version: {version}"
 
 help = """
 CLI Commands Help:
@@ -9,7 +10,6 @@ CLI Commands Help:
 - `help`: display help;
 - `exit`: exit application.
 """
-
 [errors]
 file_not_found = "File {filename} not found"
 invalid_input = "Invalid input"
