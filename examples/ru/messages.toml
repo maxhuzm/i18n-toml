@@ -1,0 +1,24 @@
+[info]
+welcome = "Добро пожаловать, {username}!"
+version.stable = "Стабильная версия приложения: {version}"
+version.alpha = "Альфа-версия приложения: {version}"
+
+help = """
+Справка по командам CLI:
+- `version`: вывод версии приложения;
+- `open <FILENAME>`: открыть файл;
+- `help`: вывод справки;
+- `exit`: выход из приложения.
+"""
+
+[errors]
+file_not_found = "Файл {filename} не найден"
+invalid_input = "Неверный ввод"
+network_error = "Ошибка сети"
+server_error = "Ошибка сервера"
+
+[auth]
+login_success = "Вход выполнен успешно"
+logout_success = "Выход выполнен успешно"
+invalid_credentials = "Неверные учетные данные"
+permission_denied = "Доступ запрещен"
