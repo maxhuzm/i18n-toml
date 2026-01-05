@@ -1,6 +1,6 @@
 [project]
 name = "i18n-toml"
-version = "0.1"
+version = "0.2"
 description = "Internalization tool for Python projects using `.toml` files for storing text content"
 readme = "README.md"
 authors = [

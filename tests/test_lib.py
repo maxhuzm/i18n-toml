@@ -67,3 +67,14 @@ def test_i18ntoml_functor():
     username = "Рудольфо"
     assert i18n("messages.info.welcome").format(username=username) == "Добро пожаловать, Рудольфо!"
     assert i18n("buttons.login_btn") == "Войти"
+
+
+def test_kwargs_in_get():
+    """Test kwargs in get() method to pass placeholders values."""
+    i18n = I18nToml(EXAMPLES, LOCALE_RU)
+    username = "Рудольфо"
+    version = "1.0.1"
+    assert i18n("messages.info.welcome", username=username) == "Добро пожаловать, Рудольфо!"
+    assert i18n("messages.info.version.stable", version=version) == "Стабильная версия приложения: 1.0.1"
+    with pytest.raises(KeyError):
+        i18n("messages.info.welcome", no_exist_key="value")

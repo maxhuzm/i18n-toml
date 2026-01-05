@@ -71,14 +71,14 @@ Import the library:
 import i18n_toml
 ```
 
-Create I18nToml object, passing the localizations folder path and locale index to use:
+Create **`I18nToml`** object, passing the localizations folder path and locale index to use:
 
 ```python
 from pathlib import Path
 
 i18n = I18nToml(Path('./locales'), 'en')
 ```
-**Warning:** *the locale index is case sensitive!*
+_**Warning:**_ _the locale index is case sensitive!_
 
 Use `get` method of the object to obtain text value by key passed.
 The key is dot-separated string representing path to the value needed, starting by file name and navigating futher inside the file hierarchy (sections, keys).
@@ -93,6 +93,22 @@ It's possible to use object's functor call, that is similar to using `get` metho
 ```python
 caption = i18n("buttons.common.ok_btn")
 ```
+
+*Added in version 0.2*
+
+The `get` method supports additional `**kwargs` arguments to set values for `{...}` placeholders in string values.
+For example, the string in toml file:
+
+```toml
+welcome = "Welcome, {username}!"
+```
+
+can be obtained with user name substituted by call:
+
+```python
+msg = i18n("welcome", username="John")
+```
+**Output:** `"Welcome, John!"`
 
 ## Dependencies
 
