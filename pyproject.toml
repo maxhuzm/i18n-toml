@@ -7,6 +7,13 @@ authors = [
     { name = "Maxim Huzmiev", email = "max@huzm.ru" }
 ]
 requires-python = ">=3.11"
+keywords = ["n18i", "internalization", "localization", "toml"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Development Status :: 4 - Beta"
+]
 dependencies = []
 
 [build-system]
@@ -17,3 +24,9 @@ build-backend = "uv_build"
 dev = [
     "pytest>=9.0.2",
 ]
+
+[project.urls]
+Homepage = "https://github.com/maxhuzm/i18n-toml"
+Repository = "https://github.com/maxhuzm/i18n-toml"
+Documentation = "https://github.com/maxhuzm/i18n-toml/blob/master/README.md"
+Changelog = "https://github.com/maxhuzm/i18n-toml/blob/master/CHANGELOG.md"
