@@ -30,29 +30,32 @@ class I18nToml:
 
 
 
-    def __call__(self, key: str) -> str:
+    def __call__(self, key: str, **kwargs) -> str:
         """
         Get localized text by key (dubles of get() method)
         
         :param key: Key to get text from.
         :type key: str
+        :param kwargs: Additional arguments to replace the placeholders in the text.
         :return: Text.
         :rtype: str
         :raises FileNotFoundError: If the file with the key does not exist.
         """
-        return self.get(key)
+        return self.get(key, **kwargs)
 
 
 
-    def get(self, key: str) -> str:
+    def get(self, key: str, **kwargs) -> str:
         """
         Get localized text by key.
         
         :param key: Key to get text from.
         :type key: str
+        :param kwargs: Additional arguments to replace the placeholders in the text.
         :return: Text.
         :rtype: str
         :raises FileNotFoundError: If the file with the key does not exist.
+        :raises KeyError: If the key passed in **kwargs not found in the string's placeholders.
         """
         key_parts = key.split(".")
         file_name = key_parts[0] + ".toml"
@@ -69,4 +72,8 @@ class I18nToml:
                 value = value[part]
             except KeyError:
                 raise KeyError(f"Key `{part}` not found in `{file_path}`.") from None
-        return str(value)
+        value = str(value)
+        # Format the value, if kwargs passed
+        if kwargs:
+            value = value.format(**kwargs)
+        return value
