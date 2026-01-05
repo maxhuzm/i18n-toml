@@ -76,20 +76,25 @@ Create I18nToml object, passing the localizations folder path and locale index t
 ```python
 from pathlib import Path
 
-i18n = I18nToml(Path('./localizations'), 'en')
+i18n = I18nToml(Path('./locales'), 'en')
 ```
-**Warning:** the locale index is case sensitive!
+**Warning:** *the locale index is case sensitive!*
 
 Use `get` method of the object to obtain text value by key passed.
-The key is dot-separated path to the value needed, starting by file name and navigating inside the file hierarchy (sections, keys).
+The key is dot-separated string representing path to the value needed, starting by file name and navigating futher inside the file hierarchy (sections, keys).
 
 ```python
-caption = i18n.get('buttons.common.ok_btn')
+caption = i18n.get("buttons.common.ok_btn")
 ```
 **Output:** `"Ok"`
 
 It's possible to use object's functor call, that is similar to using `get` method:
 
 ```python
-caption = i18n('buttons.common.ok_btn')
+caption = i18n("buttons.common.ok_btn")
 ```
+
+## Dependencies
+
+The library has no external dependencies, using only standard language tools.
+However, a Python version of at least **3.11** is required, since the `tomllib` library is used to work with toml files, which is built into the language starting with the specified version.
