@@ -2,6 +2,14 @@
 welcome = "Welcome, {username}!"
 version = "Application version: {version}"
 
+help = """
+CLI Commands Help:
+- `version`: display application version;
+- `open <FILENAME>`: open file;
+- `help`: display help;
+- `exit`: exit application.
+"""
+
 [errors]
 file_not_found = "File {filename} not found"
 invalid_input = "Invalid input"

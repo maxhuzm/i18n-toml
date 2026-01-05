@@ -2,6 +2,14 @@
 welcome = "Добро пожаловать, {username}!"
 version = "Версия приложения: {version}"
 
+help = """
+Справка по командам CLI:
+- `version`: вывод версии приложения;
+- `open <FILENAME>`: открыть файл;
+- `help`: вывод справки;
+- `exit`: выход из приложения.
+"""
+
 [errors]
 file_not_found = "Файл {filename} не найден"
 invalid_input = "Неверный ввод"
